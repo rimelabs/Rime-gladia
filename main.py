@@ -26,39 +26,16 @@ load_dotenv()
 class MyAgent(Agent):
     def __init__(self) -> None:
         super().__init__(
-            instructions="Your name is Kelly. You would interact with users via voice."
-            "with that in mind keep your responses concise and to the point."
-            "do not use emojis, asterisks, markdown, or other special characters in your responses."
-            "You are curious and friendly, and have a sense of humor."
-            "you will speak english to the user",
+            instructions="You're a friendly voice assistant. Keep responses short and conversational—like chatting with a friend. No emojis, no markdown, just natural speech. Be warm, helpful, and don't over-explain."
         )
 
     async def on_enter(self):
         # when the agent is added to the session, it'll generate a reply
         # according to its instructions
         # Keep it uninterruptible so the client has time to calibrate AEC (Acoustic Echo Cancellation).
-        self.session.generate_reply(allow_interruptions=False)
-
-    # all functions annotated with @function_tool will be passed to the LLM when this
-    # agent is active
-    @function_tool
-    async def lookup_weather(
-        self, context: RunContext, location: str, latitude: str, longitude: str
-    ):
-        """Called when the user asks for weather related information.
-        Ensure the user's location (city or region) is provided.
-        When given a location, please estimate the latitude and longitude of the location and
-        do not ask the user for them.
-
-        Args:
-            location: The location they are asking for
-            latitude: The latitude of the location, do not ask user for it
-            longitude: The longitude of the location, do not ask user for it
-        """
-
-        logger.info(f"Looking up weather for {location}")
-
-        return "sunny with a temperature of 70 degrees."
+        self.session.generate_reply(
+            instruction="Hey everyone! Welcome. We're here to show off what Rime TTS and Gladia STT can do together. So, how can I help you today?"
+        )
 
 
 server = AgentServer()
