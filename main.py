@@ -57,7 +57,8 @@ async def entrypoint(ctx: JobContext) -> None:
     ctx.log_context_fields = {"room": ctx.room.name}
 
     session = AgentSession(
-        stt=gladia.STT(),
+        stt=gladia.STT(
+            languages=["en"]),
         llm="openai/gpt-4o",
         tts=rime.TTS(model="arcana", speaker="oculus"),
         turn_detection=MultilingualModel(),
