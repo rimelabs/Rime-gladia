@@ -104,12 +104,29 @@ This mode simulates voice interaction in the console without requiring a LiveKit
 ### Development Mode (Internet-Accessible Testing)
 Connect to LiveKit Cloud for testing over the internet:
 
+**Step 1: Create a Sandbox Environment**
+
+1. Go to [LiveKit Cloud Dashboard](https://cloud.livekit.io/)
+2. Navigate to **Sandbox** in the sidebar
+3. Choose **Web Voice Agent** as your sandbox type
+4. Create a new sandbox
+
+**Step 2: Launch the Sandbox**
+
+1. Under **Sandbox App**, find the sandbox you just created
+2. Click the **Launch** button on your sandbox
+
+**Step 3: Start the Agent**
+
+Run the development mode command in your terminal:
 
 ```bash
 uv run main.py dev
 ```
 
-This mode creates a temporary LiveKit room and provides a URL you can use to test the agent from any device.
+**Step 4: Connect to the Agent**
+
+Once the agent is running, click the **Start** button in your sandbox interface to begin voice interaction.
 
 ### Production Mode
 Run the agent in production environment:
