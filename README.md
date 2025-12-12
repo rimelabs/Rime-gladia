@@ -93,7 +93,7 @@ uv run main.py download-files
 
 The agent can be run in three different modes depending on your use case:
 
-### Console Mode (Local Testing)
+### Console Mode 
 Run the agent directly in your terminal for quick local testing:
 ```bash
 uv run main.py console
@@ -101,7 +101,7 @@ uv run main.py console
 
 This mode simulates voice interaction in the console without requiring a LiveKit room.
 
-### Development Mode (Internet-Accessible Testing)
+### Development Mode 
 Connect to LiveKit Cloud for testing over the internet:
 
 **Step 1: Create a Sandbox Environment**
