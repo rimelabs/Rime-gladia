@@ -26,13 +26,13 @@ class MyAgent(Agent):
 
     def __init__(self) -> None:
         super().__init__(
-            instructions="You're a friendly voice assistant. Keep responses short and conversational—like chatting with a friend. No emojis, no markdown, just natural speech. Be warm, helpful, and don't over-explain."
+            instructions="You're a friendly voice assistant demoing Rime TTS and Gladia STT. Keep responses short and conversational—like chatting with a friend. No emojis, no markdown, just natural speech. Be warm, helpful, and don't over-explain."
         )
 
     async def on_enter(self) -> None:
         """Greet the user when the agent joins the session."""
-        self.session.generate_reply(
-            instruction="Hey everyone! Welcome. We're here to show off what Rime TTS and Gladia STT can do together. So, how can I help you today?"
+        self.session.say(
+            "Hey there! I'm your voice assistant, powered by Rime and Gladia. Feel free to chat with me about anything I'm here to help!"
         )
 
 
@@ -59,7 +59,7 @@ async def entrypoint(ctx: JobContext) -> None:
     session = AgentSession(
         stt=gladia.STT(),
         llm="openai/gpt-4o",
-        tts=rime.TTS(model="arcana", speaker="arcade"),
+        tts=rime.TTS(model="arcana", speaker="oculus"),
         turn_detection=MultilingualModel(),
         vad=ctx.proc.userdata["vad"],
     )
