@@ -16,7 +16,7 @@ from livekit.agents import (
 from livekit.plugins import silero, rime, gladia, noise_cancellation
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
-logger = logging.getLogger("basic-agent")
+logger = logging.getLogger("rime-gladia-agent")
 
 load_dotenv()
 
@@ -32,7 +32,7 @@ class MyAgent(Agent):
     async def on_enter(self) -> None:
         """Greet the user when the agent joins the session."""
         self.session.say(
-            "Hey there! I'm your voice assistant, powered by Rime and Gladia. Feel free to chat with me about anything I'm here to help!"
+            "Hey there! I'm your voice assistant, powered by Rime and Gladia. Feel free to chat with me about anything. I'm here to help!"
         )
 
 
