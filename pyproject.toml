@@ -1,0 +1,13 @@
+[project]
+name = "rime-gladia"
+version = "0.1.0"
+description = "Voice assistant demo showcasing Rime TTS and Gladia STT with LiveKit"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "livekit>=1.0.20",
+    "livekit-agents[openai,rime,silero,turn-detector,gladia]>=1.3.6",
+    "livekit-plugins-noise-cancellation>=0.2.5",
+    "python-dotenv>=1.2.1",
+]
+

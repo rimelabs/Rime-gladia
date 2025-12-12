@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[oc]
+
+# Virtual environment
+.venv/
+
+# Environment variables (API keys for OpenAI, Gladia, Rime, LiveKit)
+.env
+
+# macOS
+.DS_Store
