@@ -1,7 +1,7 @@
 [project]
 name = "rime-gladia"
 version = "0.1.0"
-description = "Add your description here"
+description = "Voice assistant demo showcasing Rime TTS and Gladia STT with LiveKit"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
